@@ -1,10 +1,10 @@
-mileage\MessageApplication.class
 mileage\MessageController.class
 mileage\config\kafka\KafkaProcessor.class
 mileage\Message.class
-mileage\AbstractEvent.class
 mileage\MessageRepository.class
+mileage\AbstractEvent$1.class
+mileage\MessageApplication.class
+mileage\AbstractEvent.class
 mileage\MemberJoined.class
 mileage\MsgSent.class
 mileage\PolicyHandler.class
-mileage\AbstractEvent$1.class

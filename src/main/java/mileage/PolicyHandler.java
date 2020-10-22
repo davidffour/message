@@ -40,7 +40,7 @@ public class PolicyHandler {
 
     @StreamListener(KafkaProcessor.INPUT)
     public void wheneverMemberJoined_SendMsg(@Payload MemberJoined memberJoined) {
-        if (memberJoined.isMe() && Objects.equals(memberJoined.getMemberStatus(), "READY")) {
+        if (memberJoined.isMe() && Objects.equals(memberJoined.getMemberStatus(), "NEW")) {
             Message message = new Message();
 
 
@@ -49,7 +49,7 @@ public class PolicyHandler {
             message.setMemberId(memberJoined.getMemberId());
             message.setPhoneNo(memberJoined.getPhoneNo());
             message.setMessageContents("CONTENTS");
-            message.setMessageStatus("READY");
+            message.setMessageStatus("NEW");
 
             messageRepository.save(message);
         }

@@ -23,12 +23,14 @@ public class Message {
         MsgSent msgSent = new MsgSent();
         BeanUtils.copyProperties(this, msgSent);
 
-        if (phoneNo.substring(0,3).equals("011")) {
-            System.out.println("##### MESSAGE SENT" + phoneNo);
-            msgSent.setMessageStatus("SUCCESS"); 
+        System.out.println("##### MESSAGE SENT" + phoneNo);
+
+        if (phoneNo.equals("01100000000")) {
+            System.out.println("##### phonelen " + phoneNo);
+            msgSent.setMessageStatus("SKT"); // SUCCESS / FAIL
             msgSent.setMessageContents("MESSAGE SEND SUCCESS");
         } else {
-            msgSent.setMessageStatus("FAIL");
+            msgSent.setMessageStatus("NON_SKT");
             msgSent.setMessageContents("MESSAGE SEND FAIL");
         }
         msgSent.publishAfterCommit();

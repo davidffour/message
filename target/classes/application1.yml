@@ -4,7 +4,15 @@ server:
 
 spring:
   profiles: default
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: root1234
+    url: jdbc:mariadb://localhost:3306/test
+
   jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     properties:
       hibernate:
         show_sql: true
@@ -41,6 +49,20 @@ server:
 
 spring:
   profiles: docker
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: root1234
+    url: jdbc:mariadb://database-1.chakwspaezvo.ap-northeast-1.rds.amazonaws.com:3306/test
+
+
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
   cloud:
     stream:
       kafka:
