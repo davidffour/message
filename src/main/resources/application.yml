@@ -53,7 +53,7 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     username: root
     password: root1234
-    url: jdbc:mariadb://database-2.chakwspaezvo.ap-northeast-1.rds.amazonaws.com:3306/test
+    url: jdbc:mariadb://database-2.chakwspaezvo.ap-northeast-1.rds.amazonaws.com:3306/test2
 
   jpa:
     database: mysql
@@ -83,6 +83,7 @@ spring:
         event-out:
           destination: mileage
           contentType: application/json
+
 
 
 #server:
